@@ -16,6 +16,10 @@ from pydantic import BaseModel
 from pathlib import Path
 import csv
 import nest_asyncio
+import models
+from database import engine
+from routers import auth
+from fastapi.staticfiles import StaticFiles
 
 import sys
 path_root = Path(__file__).parents[1]
@@ -36,8 +40,12 @@ class jsonScraps(BaseModel):
     link: Optional[str] = None
 
 
-app = FastAPI()
+app = FastAPI(title="Slash", description="Slash using FastAPI", version="1.0.0")
 
+models.Base.metadata.create_all(bind=engine)
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
+app.include_router(auth.router)
 
 @app.get("/")
 async def read_root():

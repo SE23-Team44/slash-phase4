@@ -1,0 +1,23 @@
+html {
+  min-height: 100%;
+}
+
+/* body styling */
+body {
+  background-image: -moz-linear-gradient(136deg, rgb(149, 153, 226) 0%, rgb(139, 198, 236) 100%);
+  background-image: -webkit-linear-gradient(136deg, rgb(149, 153, 226) 0%, rgb(139, 198, 236) 100%);
+  background-image: -ms-linear-gradient(136deg, rgb(149, 153, 226) 0%, rgb(139, 198, 236) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #323232;
+}

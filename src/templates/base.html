@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/user/css/base.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/user/css/bootstrap.css') }}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Slash</title>
+
+</head>
+
+<body>
+
+    {% block content %}
+
+    {% endblock %}
+
+
+    <!-- adding validation script for input field to prevent space as only input data -->
+    <script type="text/javascript">
+        function validate(input) {
+            if (/^\s/.test(input.value))
+                input.value = '';
+        }
+
+    </script>
+</body>
+
+</html>

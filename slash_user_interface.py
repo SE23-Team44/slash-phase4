@@ -5,6 +5,8 @@ import streamlit as st
 from src.main_streamlit import search_items_API
 from src.url_shortener import shorten_url
 import re
+import requests
+import webbrowser
 
 def extract_and_format_numbers(input_string):
     # Use regular expressions to find all numbers in the input string
@@ -53,6 +55,62 @@ with open('assets/style.css') as f:
         {f.read()}
         </style>
     """, unsafe_allow_html=True)
+
+# -----------------------------------------------------------------------
+
+# variable to store if the user is logged in
+token = None
+API_URL = "http://127.0.0.1:5050/auth"
+BASE_URL = "http://localhost:8501"
+
+
+# signin = st.button("Sign In", key = "signin")
+
+if not token and st.button("Register", key = "register"):
+     webbrowser.open_new_tab(f"{API_URL}/register")
+
+if not token:# and signin:
+        st.header("Login")
+        username = st.text_input("Username")
+        password = st.text_input("Password", type="password")
+        login = st.button("Login")
+        if login:
+            if username and password:
+                response = requests.post(
+                    f"{API_URL}/token",
+                    data={"username": username, "password": password}
+                )
+                if response.json():
+                    token = response.json()
+                    st.write("You are now logged in.")
+                else:
+                    st.error("Login failed. Please check your credentials.")
+            else:
+                st.warning("Please enter both username and password.")
+
+if token:
+    # User is logged in
+    if st.button("View Wishlist"):
+        wishlist_response = requests.get(f"{BASE_URL}/wishlist")
+        if wishlist_response.status_code == 200:
+            st.write(wishlist_response.json()["message"])
+        else:
+            st.error("Failed to retrieve wishlist.")
+    if st.button("Logout"):
+        response = requests.get(f"{API_URL}/logout")
+        token = None
+        st.success("Logged out successfully.")
+        st.markdown(
+        """
+        <script>
+        window.location.reload();
+        </script>
+        """,
+        unsafe_allow_html=True
+        )
+
+
+# -----------------------------------------------------------------------
 
 # Display Image
 st.image("assets/slash.png")
