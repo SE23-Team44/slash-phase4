@@ -238,4 +238,4 @@ async def register_user(request: Request, email: str = Form(...), username: str 
     db.commit()
 
     msg = "User successfully created"
-    return RedirectResponse(url="http://localhost:8501", status_code=status.HTTP_302_FOUND, request=request)
+    return RedirectResponse(url="http://localhost:8501", status_code=status.HTTP_302_FOUND)
