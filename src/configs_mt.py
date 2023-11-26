@@ -29,7 +29,7 @@ WALMART = {
     'img_indicator': 'div.relative.overflow-hidden img'
 }
 
-AMAZON = {
+'''AMAZON = {
     'site': 'amazon',
     'url': 'https://www.amazon.com/s?k=',
     'item_component': 'div',
@@ -51,7 +51,7 @@ COSTCO = {
     'title_indicator': 'span a',
     'price_indicator': 'div.price',
     'link_indicator': 'span.description a',
-}
+}'''
 
 BESTBUY = {
     'site': 'bestbuy',
@@ -182,4 +182,5 @@ class scrape_ebay(Thread):
         self.result = items
 
 
-CONFIGS = [WALMART, AMAZON, COSTCO, BESTBUY]
+# CONFIGS = [WALMART, AMAZON, COSTCO, BESTBUY]
+CONFIGS = [WALMART, BESTBUY]
