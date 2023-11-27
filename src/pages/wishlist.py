@@ -38,23 +38,31 @@ def path_to_url_html(path):
 
 @st.cache_data
 def convert_df_to_html(input_df):
-     # IMPORTANT: Cache the conversion to prevent computation on every rerun
-     return input_df.to_html(escape=False, formatters=dict(Image=path_to_image_html,Link=path_to_url_html))
+    # IMPORTANT: Cache the conversion to prevent computation on every rerun
+    return input_df.to_html(escape=False, formatters=dict(Image=path_to_image_html,Link=path_to_url_html))
 
 def render_wishlist():
+    # Check if the user is logged in and if 'cookie' is initialized
+    if 'token' not in st.session_state or not st.session_state.token or 'cookie' not in st.session_state:
+        st.warning("Login first to add item into wishlist.")
+        return  # Return early from the function
 
     API_URL = "http://127.0.0.1:5050"
 
     # To get all the products wishlisted by the user
-    response = requests.get(
-        f"{API_URL}/wishlist",
-        cookies={"access_token": st.session_state.cookie}
-    )
-    response_json = response.json()  # This converts the response to a Python dictionary
+    # Make sure 'cookie' is available before making the request
+    if 'cookie' in st.session_state and st.session_state.cookie:
+        response = requests.get(
+            f"{API_URL}/wishlist",
+            cookies={"access_token": st.session_state.cookie}
+        )
+        response_json = response.json()  # This converts the response to a Python dictionary
+    else:
+        st.warning("You need to log in to see your wishlist.")
+        return
 
     list = []
 
-    # Add product_id as a 
     for key, value in response_json.items():
         product = json.loads(value)
         product['product_id'] = key
@@ -90,12 +98,16 @@ def render_wishlist():
     product_index = st.text_input('Delete From Wish List')
     wishlist_button = st.button('Delete')
     if wishlist_button:
-        response = requests.delete(
-            f"{API_URL}/wishlist/{product_index}",
-            cookies={"access_token": st.session_state.cookie}
-        )
+        # Again, make sure 'cookie' is available before making the request
+        if 'cookie' in st.session_state and st.session_state.cookie:
+            response = requests.delete(
+                f"{API_URL}/wishlist/{product_index}",
+                cookies={"access_token": st.session_state.cookie}
+            )
 
-        if response.status_code == 200:
-            st.write("Removed successfully")
-            st.rerun()
-    
+            if response.status_code == 200:
+                st.write("Removed successfully")
+                st.rerun()
+        else:
+            st.warning("You need to log in to modify your wishlist.")
+

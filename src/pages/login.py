@@ -11,9 +11,6 @@ from src.pages.wishlist import render_wishlist
 
 def render_login():
 
-    # Display Image
-    st.image("assets/slash.png")
-
     with open('assets/style.css') as f:
         st.markdown(f"""
             <style>

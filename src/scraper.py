@@ -13,7 +13,8 @@ from datetime import datetime
 
 # local imports
 import src.formattr as form
-from src.configs import AMAZON, WALMART, COSTCO, BESTBUY, scrape_ebay, scrape_target
+# from src.configs import AMAZON, WALMART, COSTCO, BESTBUY, scrape_ebay, scrape_target
+from src.configs import WALMART, BESTBUY, scrape_ebay, scrape_target
 
 def httpsGet(URL):
     """makes HTTP called to the requested URL with custom headers
@@ -114,14 +115,14 @@ def scrape(args, scrapers):
     for scraper in scrapers:
         if scraper == 'walmart':
             local = search(query, WALMART)
-        elif scraper == 'amazon':
-            local = search(query, AMAZON)
+        # elif scraper == 'amazon':
+            # local = search(query, AMAZON)
         elif scraper == 'target':
             local = scrape_target(query)
         elif scraper == 'ebay':
             local = scrape_ebay(query)
-        elif scraper == 'costco':
-            local = search(query, COSTCO)
+        # elif scraper == 'costco':
+            # local = search(query, COSTCO)
         elif scraper == 'bestbuy':
             local = search(query, BESTBUY)
         else:

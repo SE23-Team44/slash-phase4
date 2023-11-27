@@ -8,7 +8,7 @@ from src.pages.logout import render_logout
 import streamlit as st
 
 st.set_page_config(page_title="Slash - Product Search", page_icon="🔍")
-st.title("Slash - Product Search")
+st.markdown("<span class='float-box'><h1 class='float'>Slash - Product Search</h1></span>", unsafe_allow_html=True)
 st.session_state.token = st.session_state.get("token", None)
 
 class UIManager:

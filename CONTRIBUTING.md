@@ -1,6 +1,6 @@
 # HELLO!! WELCOME TO CONTRIBUTING :)
 ## Thanks for being here and taking your time to contribute.  <br>
-The following is a set of guidelines for contributing to "Slash" and its packages, which are hosted in the [Slash-phase4](https://github.com/SE23-Team44/slash-phase4) on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request. <br>
+The following is a set of guidelines for contributing to "Slash" and its packages, which are hosted in the [Slash-phase5](https://github.com/MeryHarikaG/slash-phase5) on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request. <br>
 
 # Pull Request Process
 1. Pass all the test cases that we have mentioned in the test.py.
@@ -52,7 +52,7 @@ The following is a set of guidelines for contributing to "Slash" and its package
     test.py
 
 ## Code of Conduct
-This project and everyone participating in it is governed by the [Code of Conduct](https://github.com/SE23-Team44/slash-phase4/blob/main/Code_Of_Conduct.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to dhj165@hotmail.com, sarathn08@gmail.com.
+This project and everyone participating in it is governed by the [Code of Conduct](https://github.com/SE23-Team44/slash-phase4/blob/main/Code_Of_Conduct.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to simlyclipse43@gmail.com.
 
 ## How can I Contribute
 ### Reporting Bugs 
@@ -117,7 +117,7 @@ Any suggesting enhancements like adding new features or imporving existing funct
 #### Local development
 
 For developing the project, each section is done locally.
-* [Contributing to Calculator](https://github.com/SE23-Team44/slash-phase4/blob/main/CONTRIBUTING.md)
+* [Contributing to Calculator](https://github.com/MeryHarikaG/slash-phase5/edit/main/CONTRIBUTING.md)
 
 #### Pull Requests
 

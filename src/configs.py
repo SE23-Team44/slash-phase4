@@ -26,7 +26,7 @@ WALMART = {
     'link_indicator': 'a'
 }
 
-AMAZON = {
+'''AMAZON = {
     'site': 'amazon',
     'url': 'https://www.amazon.com/s?k=',
     'item_component': 'div',
@@ -48,7 +48,7 @@ COSTCO = {
     'title_indicator': 'span a',
     'price_indicator': 'div.price',
     'link_indicator': 'span.description a',
-}
+}'''
 
 BESTBUY = {
     'site': 'bestbuy',
@@ -153,4 +153,5 @@ def scrape_ebay(query):
     return items
 
 
-CONFIGS = [WALMART, AMAZON, COSTCO, BESTBUY]
+# CONFIGS = [WALMART, AMAZON, COSTCO, BESTBUY]
+CONFIGS = [WALMART, BESTBUY]

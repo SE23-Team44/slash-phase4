@@ -72,7 +72,7 @@ Slash is a publicly accessible web API framework that allows one to scrape the m
 ---
 1. Clone the Github repository to a desired location on your computer. You will need [git](https://git-scm.com/) to be preinstalled on your machine. Once the repository is cloned, you will then ```cd``` into the local repository.
 ```
-git clone https://github.com/SE23-Team44/slash-phase4.git
+git clone https://github.com/MeryHarikaG/slash-phase5.git
 ```
 2. This project uses Python 3, so make sure that [Python](https://www.python.org/downloads/) and [Pip](https://pip.pypa.io/en/stable/installation/) are preinstalled. All requirements of the project are listed in the ```requirements.txt``` file. Use pip to install all of those.
 ```
@@ -171,10 +171,10 @@ Future Roadmap
 ---
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/dhirajv2000"><img src="https://avatars.githubusercontent.com/u/54794049?s=64&v=4" width="75px;" alt=""/><br /><sub><b>Dhiraj Venugopal</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/Sharatn7"><img src="https://avatars.githubusercontent.com/u/56881419?s=64&v=4" width="75px;" alt=""/><br /><sub><b>Sharat Neppali</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/sathiya06"><img src="https://avatars.githubusercontent.com/u/64639742?v=4" width="75px;" alt=""/><br /><sub><b>Sathiya Narayanan Venkatesan</b></sub></a></td>
-    <td align="center"><a href="https://github.com/aadithya-naresh"><img src="https://avatars.githubusercontent.com/u/49028800?s=64&v=4" width="75px;" alt=""/><br /><sub><b>Aadithya Naresh</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/MeryHarikaG"><br/><sub><b>Mery Harika Gaddam</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/kothasrilakshmi"><br /><sub><b>Sri Lakshmi Kotha</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/tbattul"><br/><sub><b>Tanmaiyee Reddy Battula</b></sub></a></td>
+    <td align="center"><a href="https://github.com/kavyajoshi510"><br /><sub><b>Kavya Lalbahadur Joshi</b></sub></a><br /></td>
 </tr>
 </table>
 
@@ -186,4 +186,4 @@ We would also like to extend our gratitude to previous group : https://github.co
 
 :email: Support
 ---
-For any queries and help, please reach out to us at our discord channel: https://discord.gg/6x8ZJvPc, dhj165@hotmail.com, sarathn08@gmail.com
+For any queries and help, please reach out to us at : simlyclipse43@gmail.com
