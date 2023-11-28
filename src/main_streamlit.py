@@ -55,14 +55,14 @@ def search_items_API(
 
     scrapers = []
 
-    if site == 'az' or site == 'all':
-        scrapers.append('amazon')
+    # if site == 'az' or site == 'all':
+        # scrapers.append('amazon')
     if site == 'wm' or site == 'all':
         scrapers.append('walmart')
     if site == 'tg' or site == 'all':
         scrapers.append('target')
-    if site == 'cc' or site == 'all':
-        scrapers.append('costco')
+    # if site == 'cc' or site == 'all':
+        # scrapers.append('costco')
     if site == 'bb' or site == 'all':
         scrapers.append('bestbuy')
     if site == 'eb' or site == 'all':

@@ -13,7 +13,8 @@ from threading import Thread
 
 # local imports
 import src.formattr as form
-from src.configs_mt import AMAZON, WALMART, COSTCO, BESTBUY, scrape_ebay, scrape_target
+# from src.configs_mt import AMAZON, WALMART, COSTCO, BESTBUY, scrape_ebay, scrape_target
+from src.configs_mt import WALMART, BESTBUY, scrape_ebay, scrape_target
 
 class search(Thread):
     def __init__(self, query, config):
@@ -128,24 +129,24 @@ def scrape(args, scrapers):
 
     i = 0
     while i < len(scrapers):
-        if scrapers[i] == 'amazon':
+        '''if scrapers[i] == 'amazon':
             t_az = search(query, AMAZON)
             t_az.start()
             i += 1
             if i == len(scrapers):
-                break
+                break'''
         if scrapers[i] == 'bestbuy':
             t_bb = search(query, BESTBUY)
             t_bb.start()
             i += 1
             if i == len(scrapers):
                 break
-        if scrapers[i] == 'costco':
+        '''if scrapers[i] == 'costco':
             t_cc = search(query, COSTCO)
             t_cc.start()
             i += 1
             if i == len(scrapers):
-                break
+                break'''
         if scrapers[i] == 'ebay':
             t_eb = scrape_ebay(query)    
             t_eb.start()
@@ -171,14 +172,14 @@ def scrape(args, scrapers):
 
     i = 0
     while i < len(scrapers) :
-        if scrapers[i] == 'amazon':
+        '''if scrapers[i] == 'amazon':
             t_az.join()
             i += 1
             for sort_by in args['sort']:
                 local = form.sortList(t_az.result, sort_by, args['des'])[:args.get('num', len(t_az.result))]
             overall.extend(local)
             if i == len(scrapers):
-                break
+                break'''
         if scrapers[i] == 'bestbuy':
             t_bb.join()
             i += 1
@@ -187,14 +188,14 @@ def scrape(args, scrapers):
             overall.extend(local)
             if i == len(scrapers):
                 break
-        if scrapers[i] == 'costco':
+        '''if scrapers[i] == 'costco':
             t_cc.join()
             i += 1
             for sort_by in args['sort']:
                 local = form.sortList(t_cc.result, sort_by, args['des'])[:args.get('num', len(t_cc.result))]
             overall.extend(local)
             if i == len(scrapers):
-                break
+                break'''
         if scrapers[i] == 'ebay':
             t_eb.join()
             i += 1
